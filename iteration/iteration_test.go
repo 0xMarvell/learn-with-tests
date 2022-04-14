@@ -16,21 +16,21 @@ func TestRepeat(t *testing.T) {
 	}
 
 	for _, testcase := range testcases {
-		s := Repeat(testcase.got)
+		s := Repeat(testcase.got, testcase.reps)
 		if s != testcase.want {
-			t.Errorf("got %q, want %q", s, testcase.want)
+			t.Errorf("Repeat(%q, %d) returned %q, want %q", testcase.got, testcase.reps, s, testcase.want)
 		}
 	}
 }
 
 func ExampleRepeat() {
-	ans := Repeat("x")
+	ans := Repeat("x", 5)
 	fmt.Println(ans)
 	// Output: xxxxx
 }
 
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat("meep")
+		Repeat("meep", 2)
 	}
 }

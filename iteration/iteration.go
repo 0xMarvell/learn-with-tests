@@ -1,8 +1,6 @@
 package iteration
 
-const reps = 5
-
-func Repeat(char string) string {
+func Repeat(char string, reps int) string {
 	if char == "" {
 		return "Invalid input"
 	}
