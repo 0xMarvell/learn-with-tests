@@ -1,6 +1,9 @@
 package integers
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestAdder(t *testing.T) {
 	testcases := []struct{ v1, v2, sum float64 }{
@@ -18,4 +21,10 @@ func TestAdder(t *testing.T) {
 			t.Errorf("Adder(%f, %f) returned %f. Want %f", tt.v1, tt.v2, s, tt.sum)
 		}
 	}
+}
+
+func ExampleAdder() {
+	sum := Adder(2.3, 5)
+	fmt.Println(sum)
+	// Output: 7.3
 }
