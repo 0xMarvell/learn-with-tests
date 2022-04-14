@@ -6,11 +6,13 @@ import (
 )
 
 func TestRepeat(t *testing.T) {
-	testcases := []struct{ got, want string }{
-		{"a", "aaaaa"},
-		{"hello", "hellohellohellohellohello"},
-		{"meep", "meepmeepmeepmeepmeep"},
-		{"", "Invalid input"},
+	testcases := []struct {
+		got, want string
+		reps      int
+	}{
+		{"a", "aaaaa", 5},
+		{"hello", "hellohello", 2},
+		{"meep", "meepmeepmeep", 3},
 	}
 
 	for _, testcase := range testcases {
