@@ -52,7 +52,7 @@ func ExampleSumArr() {
 func ExampleSumSlice() {
 	sum := SumSlice([]int{3, -4, 22, -108, 330, 3, 1998, -33, -1085})
 	fmt.Println(sum)
-	// Output: 686
+	// Output: 1126
 }
 
 func BenchmarkSumArr(b *testing.B) {
