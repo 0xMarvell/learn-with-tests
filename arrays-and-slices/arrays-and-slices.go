@@ -8,3 +8,12 @@ func SumArr(numbers [5]int) int {
 	return total
 
 }
+
+func SumSlice(numbers []int) int {
+	total := 0
+	for _, v := range numbers {
+		total += v
+	}
+	return total
+
+}
