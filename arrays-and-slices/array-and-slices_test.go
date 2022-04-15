@@ -1,6 +1,9 @@
 package arraysandslices
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestSumArr(t *testing.T) {
 	testcases := []struct {
@@ -37,5 +40,29 @@ func TestSumSlice(t *testing.T) {
 		if s != test.sum {
 			t.Errorf("Sum(%d): %d. Expected: %d, Got: %d", test.numbers, s, test.sum, s)
 		}
+	}
+}
+
+func ExampleSumArr() {
+	sum := SumArr([5]int{3, -4, 22, -108, 330})
+	fmt.Println(sum)
+	// Output: 243
+}
+
+func ExampleSumSlice() {
+	sum := SumSlice([]int{3, -4, 22, -108, 330, 3, 1998, -33, -1085})
+	fmt.Println(sum)
+	// Output: 686
+}
+
+func BenchmarkSumArr(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SumArr([5]int{311, -45, 272, -108, 330})
+	}
+}
+
+func BenchmarkSumSlice(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SumSlice([]int{3, -4, 22, -108, 330, 3, 1998, -33, -1085})
 	}
 }
