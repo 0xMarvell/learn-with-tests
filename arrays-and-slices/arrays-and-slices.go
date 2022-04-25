@@ -18,6 +18,6 @@ func SumSlice(numbers []int) int {
 
 }
 
-func SumAll(numbersToSum ...[]int) []int {
-	return []int{0}
+func SumAll(numbersToSum ...[]int) (sums []int) {
+	return
 }
