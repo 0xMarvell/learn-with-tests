@@ -17,3 +17,7 @@ func SumSlice(numbers []int) int {
 	return total
 
 }
+
+func SumAll(numbersToSum ...[]int) []int {
+	return []int{0}
+}
