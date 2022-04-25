@@ -2,6 +2,7 @@ package arraysandslices
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -20,6 +21,20 @@ func TestSumArr(t *testing.T) {
 		s := SumArr(test.numbers)
 		if s != test.sum {
 			t.Errorf("Sum(%d): %d. Expected: %d, Got: %d", test.numbers, s, test.sum, s)
+		}
+	}
+}
+
+func TestSumAll(t *testing.T) {
+	testcases := []struct{ s1, s2, sum []int }{
+		{[]int{1, 2, 3, 4}, []int{5, 6, 7, 8}, []int{6, 8, 10, 12}},
+		{[]int{-5, 12, 45, -322}, []int{2, -4, -55, -222}, []int{-3, 8, -10, -544}},
+	}
+
+	for _, test := range testcases {
+		s := SumAll(test.s1, test.s2)
+		if reflect.DeepEqual(s, test.sum) {
+			t.Errorf("Sum(%d, %d): %d. Expected: %d, Got: %d", test.s1, test.s2, s, test.sum, s)
 		}
 	}
 }
