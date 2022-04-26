@@ -27,7 +27,7 @@ func TestArea(t *testing.T) {
 	for _, test := range testcases {
 		a := Area(test.length, test.width)
 		if a != test.area {
-			t.Errorf("Perimeter(%.2f, %.2f): %.2f. Expected: %.2f", test.length, test.width, a, test.area)
+			t.Errorf("Area(%.2f, %.2f): %.2f. Expected: %.2f", test.length, test.width, a, test.area)
 		}
 	}
 }
