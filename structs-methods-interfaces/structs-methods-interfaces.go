@@ -5,5 +5,5 @@ func Perimeter(l, w float64) float64 {
 }
 
 func Area(l, w float64) float64 {
-	return 0
+	return l * w
 }
