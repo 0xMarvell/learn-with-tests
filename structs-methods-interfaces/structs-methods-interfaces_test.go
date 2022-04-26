@@ -12,7 +12,7 @@ func TestPerimeter(t *testing.T) {
 	for _, test := range testcases {
 		p := Perimeter(test.length, test.width)
 		if p != test.perimeter {
-			t.Errorf("Perimeter(%f, %f): %f. Expected: %f", test.length, test.width, p, test.perimeter)
+			t.Errorf("Perimeter(%.3f, %.3f): %.3f. Expected: %.3f", test.length, test.width, p, test.perimeter)
 		}
 	}
 }
