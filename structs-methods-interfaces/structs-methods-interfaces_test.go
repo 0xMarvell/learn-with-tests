@@ -21,16 +21,19 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
-	testcases := []struct{ length, width, area float64 }{
-		{10, 10, 100},
-		{3.5, 6.72, 23.52},
-		{13, 77.95, 1013.35},
+	testcases := []struct {
+		rectangle Rectangle
+		area      float64
+	}{
+		{Rectangle{10, 10}, 100},
+		{Rectangle{3.5, 6.72}, 23.52},
+		{Rectangle{13, 77.95}, 1013.35},
 	}
 
 	for _, test := range testcases {
-		a := Area(test.length, test.width)
+		a := Area(test.rectangle)
 		if a != test.area {
-			t.Errorf("Area(%.2f, %.2f): %.2f. Expected: %.2f", test.length, test.width, a, test.area)
+			t.Errorf("Area(%.2f): %.2f. Expected: %.2f", test.rectangle, a, test.area)
 		}
 	}
 }
