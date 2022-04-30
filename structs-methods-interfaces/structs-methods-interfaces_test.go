@@ -41,33 +41,21 @@ func TestArea(t *testing.T) {
 		}
 	})
 
-	// t.Run("testing circles", func(t *testing.T) {
-	// 	testcases := []struct {
-	// 		circle Circle
-	// 		area   float64
-	// 	}{
-	// 		{Circle{10}, 314.159265},
-	// 		{Circle{3.5}, 38.484510},
-	// 		{Circle{13}, 530.929158},
-	// 	}
+	t.Run("testing circles", func(t *testing.T) {
+		testcases := []struct {
+			circle Circle
+			area   float64
+		}{
+			{Circle{10}, 314.1592653589793},
+			{Circle{3.5}, 38.48451000647496},
+			{Circle{13}, 530.929158456675},
+		}
 
-	// 	for _, test := range testcases {
-	// 		a := test.circle.Area()
-	// 		if a != test.area {
-	// 			fmt.Printf("a=%f, test.area=%f\n", a, test.area)
-	// 			fmt.Println(test.area == a)
-	// 			t.Errorf("Area(%f): %f. Expected: %f", test.circle, a, test.area)
-	// 		}
-	// 	}
-	// })
-	t.Run("circles", func(t *testing.T) {
-		circle := Circle{10}
-		got := circle.Area()
-
-		want := 314.1592653589793
-		if got != want {
-			t.Errorf("got %g want %g", got, want)
+		for _, test := range testcases {
+			a := test.circle.Area()
+			if a != test.area {
+				t.Errorf("Area(%g): %g. Expected: %g", test.circle, a, test.area)
+			}
 		}
 	})
-
 }
