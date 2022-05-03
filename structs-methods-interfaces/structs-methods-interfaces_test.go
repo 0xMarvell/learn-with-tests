@@ -23,39 +23,58 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
-	t.Run("testing rectangles", func(t *testing.T) {
-		testcases := []struct {
-			rectangle Rectangle
-			area      float64
-		}{
-			{Rectangle{10, 10}, 100},
-			{Rectangle{3.5, 6.72}, 23.52},
-			{Rectangle{13, 77.95}, 1013.35},
-		}
+	testcases := []struct {
+		shape Shape
+		area  float64
+	}{
+		{Rectangle{10, 10}, 100},
+		{Rectangle{3.5, 6.72}, 23.52},
+		{Rectangle{13, 77.95}, 1013.35},
+		{Circle{10}, 314.1592653589793},
+		{Circle{3.5}, 38.48451000647496},
+		{Circle{13}, 530.929158456675},
+		{Triangle{12, 6}, 36.0},
+	}
 
-		for _, test := range testcases {
-			a := test.rectangle.Area()
-			if a != test.area {
-				t.Errorf("Area(%.2f): %.2f. Expected: %.2f", test.rectangle, a, test.area)
-			}
+	for _, test := range testcases {
+		a := test.shape.Area()
+		if a != test.area {
+			t.Errorf("Area(%g): %g. Expected: %g", test.shape, a, test.area)
 		}
-	})
+	}
+	// t.Run("testing rectangles", func(t *testing.T) {
+	// 	testcases := []struct {
+	// 		rectangle Rectangle
+	// 		area      float64
+	// 	}{
+	// {Rectangle{10, 10}, 100},
+	// {Rectangle{3.5, 6.72}, 23.52},
+	// {Rectangle{13, 77.95}, 1013.35},
+	// 	}
 
-	t.Run("testing circles", func(t *testing.T) {
-		testcases := []struct {
-			circle Circle
-			area   float64
-		}{
-			{Circle{10}, 314.1592653589793},
-			{Circle{3.5}, 38.48451000647496},
-			{Circle{13}, 530.929158456675},
-		}
+	// 	for _, test := range testcases {
+	// 		a := test.rectangle.Area()
+	// 		if a != test.area {
+	// 			t.Errorf("Area(%.2f): %.2f. Expected: %.2f", test.rectangle, a, test.area)
+	// 		}
+	// 	}
+	// })
 
-		for _, test := range testcases {
-			a := test.circle.Area()
-			if a != test.area {
-				t.Errorf("Area(%g): %g. Expected: %g", test.circle, a, test.area)
-			}
-		}
-	})
+	// t.Run("testing circles", func(t *testing.T) {
+	// 	testcases := []struct {
+	// 		circle Circle
+	// 		area   float64
+	// 	}{
+	// {Circle{10}, 314.1592653589793},
+	// {Circle{3.5}, 38.48451000647496},
+	// {Circle{13}, 530.929158456675},
+	// 	}
+
+	// 	for _, test := range testcases {
+	// 		a := test.circle.Area()
+	// 		if a != test.area {
+	// 			t.Errorf("Area(%g): %g. Expected: %g", test.circle, a, test.area)
+	// 		}
+	// 	}
+	// })
 }
