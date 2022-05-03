@@ -2,6 +2,10 @@ package smi
 
 import "math"
 
+type Shape interface {
+	Area() float64
+}
+
 type Rectangle struct {
 	length, width float64
 }
