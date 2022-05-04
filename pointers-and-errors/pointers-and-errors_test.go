@@ -1,6 +1,8 @@
 package pointersanderrors
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestWallet(t *testing.T) {
 	wallet := Wallet{}
