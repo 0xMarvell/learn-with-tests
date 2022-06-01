@@ -3,10 +3,11 @@ package maps
 import "testing"
 
 func TestAdd(t *testing.T) {
-	dic := Dictionary{"new": "adding a new word"}
+	dic := Dictionary{}
+	dic.Add("new", "something you havent had before")
 
-	want := "adding a new word"
-	got, err := dic.Add("new")
+	want := "something you havent had before"
+	got, err := dic.Search("new")
 	if err != nil {
 		t.Fatal("should be able to find the added word:", err)
 	}
