@@ -2,6 +2,20 @@ package maps
 
 import "testing"
 
+func TestAdd(t *testing.T) {
+	dic := Dictionary{"new": "adding a new word"}
+
+	want := "adding a new word"
+	got, err := dic.Add("new")
+	if err != nil {
+		t.Fatal("should be able to find the added word:", err)
+	}
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+}
+
 func TestSearch(t *testing.T) {
 	dic := Dictionary{"test": "this is jst a test"}
 
