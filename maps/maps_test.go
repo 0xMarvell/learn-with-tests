@@ -1,6 +1,8 @@
 package maps
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestAdd(t *testing.T) {
 	dic := Dictionary{}
@@ -45,5 +47,25 @@ func assertErr(t testing.TB, got, want error) {
 	t.Helper()
 	if got != want {
 		t.Errorf("got error %q want %q", got, want)
+	}
+}
+
+func BenchmarkSearch(b *testing.B) {
+	if testing.Short() {
+		b.Skip("skipping benchmark in short mode")
+	}
+	for i := 0; i < b.N; i++ {
+		dic := Dictionary{"test": "this is jst a test"}
+		dic.Search("test")
+	}
+}
+
+func BenchmarkAdd(b *testing.B) {
+	if testing.Short() {
+		b.Skip("skipping benchmark in short mode")
+	}
+	for i := 0; i < b.N; i++ {
+		dic := Dictionary{}
+		dic.Add("test", "this is jst a test")
 	}
 }
