@@ -1,3 +1,3 @@
-module github.com/Marvellous-Chimaraoke/learn-with-tests/structs-methods-interfaces
+module github.com/0xMarvell/learn-with-tests/structs-methods-interfaces
 
 go 1.18

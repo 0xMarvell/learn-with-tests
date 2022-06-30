@@ -1,3 +1,3 @@
-module github.com/Marvellous-Chimaraoke/learn-with-tests/pointers-and-errors
+module github.com/0xMarvell/learn-with-tests/pointers-and-errors
 
 go 1.18
